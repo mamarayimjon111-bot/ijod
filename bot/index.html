@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MegaMarket.uz - Zamonaviy Onlayn Do'kon</title>
+    <meta name="description" content="Eng so'nggi gadjetlar, smartfonlar va maishiy texnika mahsulotlarini eng hamyonbop narxlarda xarid qiling. Fast delivery va 100% kafolat!">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-announcement">
+        <div class="container announcement-content">
+            <span><i class="fa-solid fa-bolt"></i> <strong>SUPER AKSIYA!</strong> Barcha mahsulotlarga 20% gacha chegirmalar va Bepul Yetkazib berish!</span>
+            <div class="announcement-right">
+                <span><i class="fa-solid fa-headset"></i> Qo'llab-quvvatlash: +998 (90) 123-45-67</span>
+                <span class="divider">|</span>
+                <select id="currency-select" class="currency-picker">
+                    <option value="UZS">UZS (so'm)</option>
+                    <option value="USD">USD ($)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header" id="navbar">
+        <div class="container header-wrapper">
+            <!-- Brand Logo -->
+            <a href="#" class="brand-logo">
+                <div class="logo-icon"><i class="fa-solid fa-store"></i></div>
+                <div class="logo-text">Mega<span>Market</span><small>.uz</small></div>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="header-search">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Mahsulotlar, brendlar va kategoriyalardan qidirish..." autocomplete="off">
+                    <button class="clear-search-btn" id="clear-search" hidden><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="search-dropdown" id="search-dropdown">
+                    <!-- Search Results dynamically loaded -->
+                </div>
+            </div>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <button class="icon-btn theme-toggle" id="theme-toggle" title="Mavzuni o'zgartirish">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="icon-btn" id="wishlist-btn" title="Saralanganlar">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge" id="wishlist-count">0</span>
+                </button>
+
+                <button class="icon-btn cart-btn-trigger" id="cart-btn" title="Savat">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="badge" id="cart-count">0</span>
+                    <div class="cart-total-preview hidden-mobile">
+                        <small>Savat</small>
+                        <span id="header-cart-total">0 so'm</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub Header Categories & Quick Links -->
+    <nav class="sub-header">
+        <div class="container sub-header-wrapper">
+            <div class="category-dropdown-container">
+                <button class="category-btn" id="category-dropdown-btn">
+                    <i class="fa-solid fa-bars-staggered"></i> Barcha Kategoriyalar <i class="fa-solid fa-chevron-down arrow"></i>
+                </button>
+                <div class="category-menu" id="category-menu">
+                    <a href="#" data-cat="all" class="active"><i class="fa-solid fa-border-all"></i> Barcha mahsulotlar</a>
+                    <a href="#" data-cat="smartphones"><i class="fa-solid fa-mobile-screen-button"></i> Smartfonlar va Gadjetlar</a>
+                    <a href="#" data-cat="laptops"><i class="fa-solid fa-laptop"></i> Noutbuk va Kompyuterlar</a>
+                    <a href="#" data-cat="audio"><i class="fa-solid fa-headphones-simple"></i> Audio va Quloqchinlar</a>
+                    <a href="#" data-cat="smartwatch"><i class="fa-solid fa-stopwatch"></i> Aqlli Soatlar</a>
+                    <a href="#" data-cat="accessories"><i class="fa-solid fa-plug"></i> Aksessuarlar va Quvvatlovchilar</a>
+                    <a href="#" data-cat="gaming"><i class="fa-solid fa-gamepad"></i> O'yin Qurilmalari (Gaming)</a>
+                </div>
+            </div>
+
+            <ul class="quick-links">
+                <li><a href="#products-section" class="active-link"><i class="fa-solid fa-fire"></i> Qaynoq Chegirmalar</a></li>
+                <li><a href="#features-section"><i class="fa-solid fa-shield-halved"></i> Kafolat & Xizmat</a></li>
+                <li><a href="#reviews-section"><i class="fa-solid fa-star"></i> Mijozlar Fikri</a></li>
+                <li><a href="#contact-section"><i class="fa-solid fa-phone"></i> Aloqa</a></li>
+            </ul>
+
+            <div class="delivery-status">
+                <i class="fa-solid fa-truck-fast"></i> <span>Toshkent bo'ylab <strong>2 soatda</strong> yetkazish!</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner Section -->
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fa-solid fa-sparkles"></i> 2026-YIL YANGI KOLLEKSIYA</div>
+                <h1 class="hero-title">Eng Zamonaviy <span>Texnologiyalar</span> Sening Qo'lingda</h1>
+                <p class="hero-subtitle">Eng so'nggi avlod smartfonlari, noutbuklar va aqlli gadjetlar. Rasmiy kafolat va Toshkent bo'ylab bepul yetkazib berish bilan!</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Original Mahsulot</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>2 God</h3>
+                        <p>Rasmiy Kafolat</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>Tezkor Xizmat</p>
+                    </div>
+                </div>
+
+                <div class="hero-cta-buttons">
+                    <a href="#products-section" class="btn btn-primary btn-lg glow-effect">
+                        <i class="fa-solid fa-bag-shopping"></i> Xarid qilishni boshlash
+                    </a>
+                    <button class="btn btn-glass btn-lg" id="promo-banner-btn">
+                        <i class="fa-solid fa-tag"></i> Promokod olish
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="banner-card">
+                    <img src="images/hero_banner.png" alt="MegaMarket Texnologiyalar" class="hero-img">
+                    <div class="flash-sale-card">
+                        <div class="flash-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="flash-info">
+                            <small>Tugashiga qoldi:</small>
+                            <div class="countdown-timer" id="countdown">
+                                <span id="hours">14</span>:
+                                <span id="minutes">32</span>:
+                                <span id="seconds">45</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Bar Section -->
+    <section class="features-bar" id="features-section">
+        <div class="container features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-truck-sparkles"></i></div>
+                <div class="feature-text">
+                    <h4>Tezkor Yetkazib Berish</h4>
+                    <p>Butun O'zbekiston bo'ylab 24 soat ichida</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-shield-check"></i></div>
+                <div class="feature-text">
+                    <h4>100% Sifat Kafolati</h4>
+                    <p>Faqat original va sertifikatlangan tovarlar</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-credit-card"></i></div>
+                <div class="feature-text">
+                    <h4>Qulay To'lov Usullari</h4>
+                    <p>Payme, Click, Uzum Pay yoki Naqd pul</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+                <div class="feature-text">
+                    <h4>24/7 Qo'llab-quvvatlash</h4>
+                    <p>Har qanday savolga darhol javob beramiz</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Products Catalogue Section -->
+    <section class="products-section" id="products-section">
+        <div class="container">
+            
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Mahsulotlar Katalogi</h2>
+                    <p class="section-subtitle">Eng mashhur va sifatli texnika mahsulotlarimiz bilan tanishing</p>
+                </div>
+                
+                <!-- Controls & Filters -->
+                <div class="filter-controls">
+                    <div class="sort-wrapper">
+                        <label for="sort-select"><i class="fa-solid fa-arrow-down-short-wide"></i> Saralash:</label>
+                        <select id="sort-select">
+                            <option value="popular">Eng mashhur</option>
+                            <option value="price-low">Narxi: Arzonidan qimmatiga</option>
+                            <option value="price-high">Narxi: Qimmatidan arzoniga</option>
+                            <option value="rating">Reyting bo'yicha</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Category Chips -->
+            <div class="category-chips" id="category-chips">
+                <button class="chip active" data-cat="all"><i class="fa-solid fa-grid-2"></i> Barchasi</button>
+                <button class="chip" data-cat="smartphones"><i class="fa-solid fa-mobile"></i> Smartfonlar</button>
+                <button class="chip" data-cat="laptops"><i class="fa-solid fa-laptop"></i> Noutbuklar</button>
+                <button class="chip" data-cat="audio"><i class="fa-solid fa-headphones"></i> Audio</button>
+                <button class="chip" data-cat="smartwatch"><i class="fa-solid fa-stopwatch"></i> Aqlli soatlar</button>
+                <button class="chip" data-cat="accessories"><i class="fa-solid fa-plug"></i> Aksessuarlar</button>
+                <button class="chip" data-cat="gaming"><i class="fa-solid fa-gamepad"></i> Gaming</button>
+            </div>
+
+            <!-- Price & In-stock quick filter bar -->
+            <div class="quick-filter-bar">
+                <div class="price-range-filter">
+                    <span>Maksimal Narx: <strong id="price-range-val">50,000,000 so'm</strong></span>
+                    <input type="range" id="price-range" min="100000" max="50000000" step="500000" value="50000000">
+                </div>
+                <div class="stock-toggle">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="in-stock-only">
+                        <span class="slider round"></span>
+                    </label>
+                    <span>Faqat sotuvda borlari</span>
+                </div>
+                <div class="result-count">
+                    Topildi: <span id="products-count-badge">0</span> ta mahsulot
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Product cards dynamically generated by JS -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state hidden" id="empty-state">
+                <i class="fa-solid fa-box-open"></i>
+                <h3>Siz izlagan mahsulot topilmadi</h3>
+                <p>Iltimos, qidiruv so'rovini yoki filtr mezonlarini o'zgartirib ko'ring.</p>
+                <button class="btn btn-outline" id="reset-filters-btn">Filtrlarni tozalash</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section" id="reviews-section">
+        <div class="container">
+            <div class="section-header center-text">
+                <h2 class="section-title">Mijozlarimiz Fikrlari</h2>
+                <p class="section-subtitle">MegaMarket.uz xizmatlaridan foydalangan 50,000+ dan ortiq mamnun xaridorlar</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar">AD</div>
+                        <div>
+                            <h4 class="user-name">Alisher Davronov</h4>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"iPhone 15 Pro Max harid qildim. Buyurtma bergach bor yog'i 1.5 soatda uyimga olib kelib berishdi. Sifat va yetkazib berish tezligi super!"</p>
+                    <span class="review-date">Kecha, Toshkent</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar alt">MD</div>
+                        <div>
+                            <h4 class="user-name">Madina Umarova</h4>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"MacBook Air M2 sotib oldim. Qadoqlanishi juda puxta va muhrlangan. Narxlari boshqa magazinlarga qaraganda ancha arzon. Rahmat!"</p>
+                    <span class="review-date">3 kun oldin, Samarqand</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar alt2">JA</div>
+                        <div>
+                            <h4 class="user-name">Jahongir Axmedov</h4>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"AirPods Pro 2 quloqchini sotib olgan edim. Kafolat taloni va barcha cheklar bilan birga keldi. Promokod bilan yana 10% chegirma oldim!"</p>
+                    <span class="review-date">Bir hafta oldin, Farg'ona</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact-section">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="brand-logo">
+                    <div class="logo-icon"><i class="fa-solid fa-store"></i></div>
+                    <div class="logo-text">Mega<span>Market</span><small>.uz</small></div>
+                </a>
+                <p>O'zbekistondagi eng yirik va ishonchli zamonaviy elektronika va gadjetlar onlayn do'koni. Qulay to'lov va tezkor yetkazib berish.</p>
+                <div class="social-links">
+                    <a href="#" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Kategoriyalar</h4>
+                <ul>
+                    <li><a href="#products-section">Smartfonlar</a></li>
+                    <li><a href="#products-section">Noutbuklar</a></li>
+                    <li><a href="#products-section">Audio & Quloqchinlar</a></li>
+                    <li><a href="#products-section">Aqlli soatlar</a></li>
+                    <li><a href="#products-section">O'yin qurilmalari</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Xaridorlarga</h4>
+                <ul>
+                    <li><a href="#">Biz haqimizda</a></li>
+                    <li><a href="#">Yetkazib berish shartlari</a></li>
+                    <li><a href="#">To'lov usullari</a></li>
+                    <li><a href="#">Kafolat va qaytarish</a></li>
+                    <li><a href="#">Ko'p beriladigan savollar</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Aloqa</h4>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-location-dot"></i> Toshkent sh., Amir Temur shoh ko'chasi, 108-uy</li>
+                    <li><i class="fa-solid fa-phone"></i> +998 (90) 123-45-67</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@megamarket.uz</li>
+                    <li><i class="fa-solid fa-clock"></i> Ish vaqti: 24/7 Har kuni</li>
+                </ul>
+                <div class="payment-methods-logos">
+                    <span class="pay-badge">Payme</span>
+                    <span class="pay-badge">Click</span>
+                    <span class="pay-badge">Uzum Pay</span>
+                    <span class="pay-badge">UzCard</span>
+                    <span class="pay-badge">Humo</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-wrapper">
+                <p>&copy; 2026 MegaMarket.uz - Barcha huquqlar himoyalangan.</p>
+                <p>Dizayn va Dasturlash premium standartlarda yaratildi ✨</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Drawer Overlay & Sidebar -->
+    <div class="drawer-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="drawer-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Xarid Savatchasi (<span id="drawer-cart-count">0</span>)</h3>
+            <button class="close-drawer-btn" id="close-cart-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="drawer-body" id="cart-items-container">
+            <!-- Cart items render dynamically -->
+        </div>
+
+        <div class="drawer-footer" id="cart-footer">
+            <div class="promo-code-box">
+                <input type="text" id="promo-input" placeholder="Promokod kiritish (masalan: BOZOR10)">
+                <button id="apply-promo-btn">Qo'llash</button>
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Mahsulotlar summa:</span>
+                    <span id="cart-subtotal">0 so'm</span>
+                </div>
+                <div class="summary-row discount-row hidden" id="discount-row">
+                    <span>Chegirma (Promokod):</span>
+                    <span id="cart-discount">-0 so'm</span>
+                </div>
+                <div class="summary-row">
+                    <span>Yetkazib berish:</span>
+                    <span id="cart-shipping">BEPUL</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Jami to'lov:</span>
+                    <strong id="cart-total-amount">0 so'm</strong>
+                </div>
+            </div>
+
+            <button class="btn btn-primary btn-block glow-effect" id="proceed-checkout-btn">
+                <i class="fa-solid fa-credit-card"></i> Buyurtmani rasmiylashtirish
+            </button>
+            <button class="btn btn-link btn-block" id="clear-cart-btn">Savatchani tozalash</button>
+        </div>
+    </aside>
+
+    <!-- Wishlist Drawer Overlay & Sidebar -->
+    <div class="drawer-overlay" id="wishlist-overlay"></div>
+    <aside class="cart-drawer" id="wishlist-drawer">
+        <div class="drawer-header">
+            <h3><i class="fa-solid fa-heart"></i> Saralangan Mahsulotlar</h3>
+            <button class="close-drawer-btn" id="close-wishlist-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body" id="wishlist-items-container">
+            <!-- Wishlist items render dynamically -->
+        </div>
+    </aside>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="quickview-modal-overlay">
+        <div class="modal-card" id="quickview-modal">
+            <button class="modal-close-btn" id="close-quickview-btn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body quickview-content" id="quickview-content">
+                <!-- Content dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkout-modal-overlay">
+        <div class="modal-card checkout-modal-card">
+            <button class="modal-close-btn" id="close-checkout-btn"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="checkout-header">
+                <h2><i class="fa-solid fa-shield-heart"></i> Buyurtmani Rasmiylashtirish</h2>
+                <p>Ma'lumotlarni kiriting va to'lov usulini tanlang</p>
+            </div>
+
+            <div class="checkout-body">
+                <form id="checkout-form" class="checkout-form-grid">
+                    <div class="form-section">
+                        <h4><i class="fa-solid fa-user"></i> 1. Xaridor Ma'lumotlari</h4>
+                        
+                        <div class="form-group">
+                            <label for="cust-name">Ism va Familiya *</label>
+                            <input type="text" id="cust-name" required placeholder="Masalan: Jamshid Karimov">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cust-phone">Telefon raqam *</label>
+                            <input type="tel" id="cust-phone" required placeholder="+998 (90) 123-45-67" value="+998 ">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cust-city">Shahar / Viloyat *</label>
+                            <select id="cust-city" required>
+                                <option value="Toshkent shahrida (Tezkor)">Toshkent shahri</option>
+                                <option value="Toshkent viloyati">Toshkent viloyati</option>
+                                <option value="Samarqand">Samarqand</option>
+                                <option value="Farg'ona">Farg'ona</option>
+                                <option value="Andijon">Andijon</option>
+                                <option value="Namangan">Namangan</option>
+                                <option value="Buxoro">Buxoro</option>
+                                <option value="Boshqa viloyat">Boshqa viloyat</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cust-address">Aniq yetkazish manzili *</label>
+                            <textarea id="cust-address" rows="2" required placeholder="Tuman, ko'cha, uy, xonadon raqami"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4><i class="fa-solid fa-wallet"></i> 2. To'lov Usuli</h4>
+
+                        <div class="payment-options">
+                            <label class="payment-radio selected">
+                                <input type="radio" name="payment-method" value="Payme" checked>
+                                <div class="radio-card-content">
+                                    <i class="fa-solid fa-credit-card"></i>
+                                    <div>
+                                        <strong>Payme</strong>
+                                        <small>Karta orqali xavfsiz to'lov</small>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="payment-radio">
+                                <input type="radio" name="payment-method" value="Click">
+                                <div class="radio-card-content">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                    <div>
+                                        <strong>Click / Click Up</strong>
+                                        <small>Tezkor to'lov</small>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="payment-radio">
+                                <input type="radio" name="payment-method" value="Naqd">
+                                <div class="radio-card-content">
+                                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                                    <div>
+                                        <strong>Naqd pul yoki Karta (Kuryerga)</strong>
+                                        <small>Mahsulotni olganda to'lash</small>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="checkout-order-summary-box">
+                            <h5>Buyurtma Xulosasi</h5>
+                            <div class="mini-summary-row">
+                                <span>Mahsulotlar soni:</span>
+                                <span id="checkout-items-qty">0 ta</span>
+                            </div>
+                            <div class="mini-summary-row final">
+                                <span>Jami Summa:</span>
+                                <strong id="checkout-final-price">0 so'm</strong>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg glow-effect">
+                            <i class="fa-solid fa-check-circle"></i> Buyurtmani Tasdiqlash
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Success Modal -->
+    <div class="modal-overlay" id="success-modal-overlay">
+        <div class="modal-card success-card">
+            <div class="success-icon-wrapper">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2>Rahmat! Buyurtmangiz Qabul Qilindi 🎉</h2>
+            <p>Buyurtma ID: <strong id="order-id-display">#MM-89412</strong></p>
+            <p class="success-sub">Operatorlarimiz tez orada <strong><span id="order-phone-display">+998 90 123 45 67</span></strong> raqami orqali siz bilan bog'lanishadi!</p>
+            
+            <div class="receipt-preview" id="receipt-preview">
+                <!-- Dynamically filled receipt details -->
+            </div>
+
+            <div class="success-actions">
+                <button class="btn btn-primary" id="close-success-btn">Xaridni davom ettirish</button>
+                <button class="btn btn-outline" onclick="window.print()"><i class="fa-solid fa-print"></i> Chekni chop etish</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- JavaScript File -->
+    <script src="app.js"></script>
+</body>
+</html>
